@@ -1,25 +1,85 @@
 <!DOCTYPE html>
-<html lang="EN">
-  <head>
-    	<meta charset="utf-8">
-   	 <title>Mi-e Dor</title>
-	<link rel="stylesheet" href="style.css">
-  </head>
+<html lang="RO">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi-e Dor</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
 
-  <body>
+  <p style="text-align: center; font-family: 'Times New Roman', Times, serif; font-size: medium; color: white;"> <b>🚧This website is still under Construction!🚧</b> </p>
 
-  	<div id="passwordDiv">
-		<h1>Site is still under Construction! Please enter secret Password below to see real site!</h1>
-		<p id="passwordText"></p>
-	 	<input type="text" placeholder="password" id="textBox">
-	 	<button onclick="SignIn()" id="signInbutton">Sign in!</button>
-   	</div>
+  <!-- Sticky Header -->
+  <header class="sticky-header">
+    <h1>Mi-e Dor</h1>
+    <nav class="nav-buttons">
+      <a href="#despre-noi" class="nav-button active"> <b>Despre noi </b></a>
+      <a href="#produsele-noastre" class="nav-button"> <b>Produsele noastre </b></a>
+    </nav>
+  </header>
 
-	<div id="mainDiv">
-		<h1>MI-EDOR.RO CEL MAI BUN WEBSITE!!!</h1>
-	</div>
+  <!-- Main Content -->
+  <main class="content-area">
+    <!-- Despre noi Section -->
+    <div id="despre-noi" class="section">
+      <h2>Despre noi</h2>
+      <p>
+        Lorem ipsum dolor sit amet consectetur adipiscing elit.
+        Quisque faucibus ex sapien vitae pellentesque sem placerat.
+        In id cursus mi pretium tellus duis convallis.
+        Tempus leo eu aenean sed diam urna tempor.
+        Pulvinar vivamus fringilla lacus nec metus bibendum egestas.
+        Iaculis massa nisl malesuada lacinia integer nunc posuere.
+        Ut hendrerit semper vel class aptent taciti sociosqu.
+        Ad litora torquent per conubia nostra inceptos himenaeos.
+      </p>
 
-	<script src="script.js"></script>
-  </body>
+      <div id="galerie" class="grid">
+        <img src="https://wallpapercave.com/wp/wp6591194.jpg" alt="Honey Products" style="--order: 0;">
+        <img src="https://wallpapercave.com/wp/wp6591194.jpg" alt="Honey Products" style="--order: 1;">
+        <img src="https://wallpapercave.com/wp/wp6591194.jpg" alt="Honey Products" style="--order: 2;">
+        <img src="https://wallpapercave.com/wp/wp6591194.jpg" alt="Honey Products" style="--order: 3;">
+        <img src="https://wallpapercave.com/wp/wp6591194.jpg" alt="Honey Products" style="--order: 4;">
+      </div>
+    </div>
 
+    <!-- Produsele noastre Section -->
+    <div id="produsele-noastre" class="section">
+      <h2>Produsele noastre</h2>
+
+      <div id="produse" class="grid">
+        <div class="produs" style="--order: 0;">
+          <img src="https://blisscooking.com/wp-content/uploads/2026/01/Easy-Honey-Trick-Recipe-1.webp" alt="Honey Products" style="width: 100%;">
+          <h3>Miere 500g</h3>
+          <h3>35 lei</h3>
+          <button><b>Cumpără</b></button>
+        </div>
+
+        <div class="produs" style="--order: 1;">
+          <img src="https://blisscooking.com/wp-content/uploads/2026/01/Easy-Honey-Trick-Recipe-1.webp" alt="Honey Products" style="width: 100%;">
+          <h3>Miere 1kg</h3>
+          <h3>50 lei</h3>
+          <button><b>Cumpără</b></button>
+        </div>
+
+        <div class="produs" style="--order: 2;">
+          <img src="https://blisscooking.com/wp-content/uploads/2026/01/Easy-Honey-Trick-Recipe-1.webp" alt="Honey Products" style="width: 100%;">
+          <h3>altele</h3>
+          <h3>50 lei</h3>
+          <button><b>Cumpără</b></button>
+        </div>
+
+        <div class="produs" style="--order: 0;">
+          <img src="https://blisscooking.com/wp-content/uploads/2026/01/Easy-Honey-Trick-Recipe-1.webp" alt="Honey Products" style="width: 100%;" >
+          <h3>Miere 250g</h3>
+          <h3>20 lei</h3>
+          <button><b>Cumpără</b></button>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
 </html>

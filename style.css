@@ -1,3 +1,213 @@
-#mainDiv{
-    visibility: hidden;
+/* Reset și stiluri de bază */
+body {
+  margin: 0;
+  margin-top: 20px;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100vw;
+  box-sizing: border-box;
+  background-color: #6b4d25;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Sticky Header */
+.sticky-header {
+  position: sticky;
+  top: 0;
+  background-color: #333;
+  width: 100%;
+  color: white;
+  text-align: center;
+  padding: 20px 0;
+  z-index: 1000;
+}
+
+.sticky-header h1 {
+  font-family: "Times New Roman", serif;
+  margin: 0;
+}
+
+.nav-buttons {
+  margin-top: 25px;
+}
+
+.nav-button {
+  background-color: #0066cc;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  margin: 0 10px;
+  font-family: Arial, sans-serif;
+}
+
+.nav-button.active {
+  background-color: #0066cc;
+  color: rgb(228, 231, 9);
+}
+
+a {
+  position: relative;
+  color: #0066cc; /* Culoarea linkului */
+  text-decoration: none; /* Elimină sublinierea implicită */
+  font-family: Arial, sans-serif;
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: #ff6600; /* Culoarea linkului la hover */
+}
+
+a::after {
+  content: "";
+  position: absolute;
+  bottom: -2px; /* Poziționează sublinierea sub text */
+  left: 0;
+  width: 0; /* Sublinierea începe de la 0 */
+  height: 2px; /* Grosimea sublinierei */
+  background-color: #ff6600; /* Culoarea sublinierei */
+  transition: width 0.3s ease;
+}
+
+a:hover::after {
+  width: 100%; /* Sublinierea se extinde la 100% la hover */
+}
+
+.content-area {
+  background-color: #f5f5dc;
+  padding: 20px;
+  width: 100%;
+}
+
+.section {
+  margin-bottom: 40px;
+  padding-top: 85px;
+}
+
+.section h2,
+.section h3 {
+  font-family: "Times New Roman", serif;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.section p {
+  font-family: "Times New Roman", serif;
+  color: #333;
+  line-height: 1.6;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Grid Layout */
+#galerie.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 2fr));
+  gap: 10px;
+  padding: 20px;
+}
+
+#galerie img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-height: 400px;
+  opacity: 0; /* Ascuns implicit */
+  transform: translateY(20px); /* Poziție inițială */
+  /*transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;*/
+}
+
+#galerie img.animate {
+  transform: translateY(0);
+  animation: fadeIn 0.6s ease-in-out forwards;
+  animation-delay: calc(0.2s * var(--order, 0));
+}
+
+/* Stiluri pentru produse */
+#produse.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(400px, 2fr));
+  gap: 10px;
+  padding: 20px;
+}
+
+.produs {
+  width: 100%;
+  border-radius: 8px;
+  background-color: #837651;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* Ascuns implicit */
+  transform: translateY(20px); /* Poziție inițială */
+  /*transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;*/
+}
+
+.produs img{
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-height: 400px;
+}
+
+.produs.animate {
+  transform: translateY(0);
+  animation: fadeIn 0.6s ease-in-out forwards;
+  animation-delay: calc(0.2s * var(--order, 0));
+}
+
+.produs button {
+  border-radius: 5px;
+  width: 50%;
+  height: 40px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  color: white;
+  background-color: #856030;
+  font-family: 'Courier New', Courier, monospace;
+  border: #6b4d25 2px;
+}
+
+button {
+  color: white;
+  background-color: #856030;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+button:hover {
+  color: #9e5f35; /* Culoarea linkului la hover */
+  background-color: #755e1d;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+
+button:active{
+  color: #442f22;
+  background-color: #0066cc;
+  transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+/* Animație pentru galerie și produse */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }

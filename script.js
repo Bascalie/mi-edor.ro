@@ -13,13 +13,13 @@ document.querySelectorAll('.nav-button').forEach(button => {
 
 document.querySelectorAll('.cumpara').forEach(button => {
   button.addEventListener('click', function() {
-    
+    document.getElementById('panou-cumpara').style.visibility = 'visible';
   });
 });
 
 document.addEventListener("DOMContentLoaded", function() {
   // Obține pozițiile de top și bottom ale secțiunilor
-  const offsetBottom = 700;
+  const offsetBottom = 500;
 
   const sections = {
     "despre-noi": {
@@ -58,15 +58,13 @@ document.addEventListener("DOMContentLoaded", function() {
   updateActiveButton(); // Inițial
 
   // Intersection Observer pentru animații (doar pentru imagini și produse)
-  const elements = document.querySelectorAll("#galerie img, .produs");
+  const elements = document.querySelectorAll(".imagine, .produs");
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        if (entry.target.classList.contains("produs") || entry.target instanceof HTMLImageElement) {
-          entry.target.classList.add("animate");
-          observer.unobserve(entry.target);
-        }
+        entry.target.classList.add("animate");
+        observer.unobserve(entry.target);
       }
     });
   }, {

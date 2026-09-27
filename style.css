@@ -123,6 +123,22 @@ html {
   margin: 50px;
 }
 
+#panou-cumpara{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw; /* 100% din lățimea ecranului */
+  height: 100vh; /* 100% din înălțimea ecranului */
+  background-color: rgba(0, 0, 0, 0.8); /* Fundal semi-transparent */
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 24px;
+  z-index: 2000;
+  visibility: hidden;
+}
+
 /* Grid Layout */
 #galerie{
   background-color: #442f22;
@@ -138,19 +154,31 @@ html {
   padding: 20px;
 }
 
-#galerie img {
+.imagine {
+  width: 100%;
+  border-radius: 8px;
+  background-color: #837651;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  opacity: 0; /* Ascuns implicit */
+  transform: translateY(20px); /* Poziție inițială */
+}
+
+.imagine img{
   width: 100%;
   height: auto;
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   max-height: 400px;
-  opacity: 0; /* Ascuns implicit */
-  transform: translateY(20px); /* Poziție inițială */
-  /*transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;*/
 }
 
-#galerie img.animate {
+.imagine.animate {
   transform: translateY(0);
   animation: fadeIn 0.6s ease-in-out forwards;
   animation-delay: calc(0.2s * var(--order, 0));
@@ -213,15 +241,15 @@ button {
 }
 
 button:hover {
-  color: #9e5f35; /* Culoarea linkului la hover */
-  background-color: #755e1d;
+  color: #fff; /* Culoarea linkului la hover */
+  background-color: #5a401f;
   transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
 }
 
 
 button:active{
-  color: #442f22;
-  background-color: #0066cc;
+  color: #e4e2e2;
+  background-color: #21180c;
   transition: color 0.1s ease-in-out, background-color 0.1s ease-in-out;
 }
 
